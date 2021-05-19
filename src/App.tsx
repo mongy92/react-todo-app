@@ -6,20 +6,25 @@ import { TodoType } from './types/TodoType';
 
 function App() {
   const [todos, setTodos] = useState<TodoType[]>([]);
+  const [showAdd, setShowAdd] = useState<boolean>(false);
 
-  const onDelete = (id: number) => {
+  const onDeleteTodo = (id: number) => {
     setTodos((prev) => prev.filter((todo) => todo.id !== id));
   };
 
-  const onAdd = (todo: TodoType) => {
+  const onAddTodo = (todo: TodoType) => {
     setTodos((prev) => [...prev, todo]);
   };
   return (
     <div className='container'>
-      <Header title='Todo App' />
-      <AddTodo onAdd={onAdd} />
+      <Header
+        title='Todo App'
+        showAdd={showAdd}
+        onClickAdd={() => setShowAdd(!showAdd)}
+      />
+      {showAdd && <AddTodo onAdd={onAddTodo} />}
       {todos.length > 0 ? (
-        <Todos todos={todos} onDelete={onDelete} />
+        <Todos todos={todos} onDelete={onDeleteTodo} />
       ) : (
         <p>No Todos</p>
       )}

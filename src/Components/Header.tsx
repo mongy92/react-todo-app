@@ -3,14 +3,23 @@ import Button from './Button';
 
 interface Props {
   title?: string;
+  showAdd: boolean;
+  onClickAdd: () => void;
 }
 
-const Header: React.FC<Props> = ({ title = 'Welcome' }) => {
-  const onClick = () => alert('Hello World');
+const Header: React.FC<Props> = ({
+  title = 'Welcome',
+  showAdd,
+  onClickAdd,
+}) => {
   return (
     <header className='header'>
       <h1>{title}</h1>
-      <Button title='Add' color='green' onClick={onClick} />
+      <Button
+        title={showAdd ? 'Close' : 'Add'}
+        color={showAdd ? 'red' : 'green'}
+        onClick={onClickAdd}
+      />
     </header>
   );
 };
