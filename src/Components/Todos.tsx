@@ -1,19 +1,11 @@
+import { TodoType } from '../types/TodoType';
 import Todo from './Todo';
 
-const todos = [
-  {
-    id: 1,
-    title: 'Styding React',
-    day: new Date().toString(),
-  },
-  {
-    id: 2,
-    title: 'Go to GYM',
-    day: new Date().toString(),
-  },
-];
+interface Props {
+  todos: TodoType[];
+}
 
-const Todos = () => {
+const Todos: React.FC<Props> = ({ todos }) => {
   return (
     <>
       {todos.map((todo) => (
