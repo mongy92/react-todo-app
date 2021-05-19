@@ -24,7 +24,11 @@ function App() {
   return (
     <div className='container'>
       <Header title='Todo App' />
-      <Todos todos={todos} onDelete={onDelete} />
+      {todos.length > 0 ? (
+        <Todos todos={todos} onDelete={onDelete} />
+      ) : (
+        <p>No Todos</p>
+      )}
     </div>
   );
 }
