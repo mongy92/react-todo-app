@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import AddTodo from './Components/AddTodo';
 import Header from './Components/Header';
 import Todos from './Components/Todos';
 import { TodoType } from './types/TodoType';
@@ -24,6 +25,7 @@ function App() {
   return (
     <div className='container'>
       <Header title='Todo App' />
+      <AddTodo />
       {todos.length > 0 ? (
         <Todos todos={todos} onDelete={onDelete} />
       ) : (
