@@ -6,8 +6,16 @@ interface Props {
 }
 
 const Button: React.FC<Props> = ({ title, color = 'black' }) => {
+  const onClick = () => {
+    alert('Hello');
+  };
+
   return (
-    <button className='btn' style={{ backgroundColor: color }}>
+    <button
+      className='btn'
+      style={{ backgroundColor: color }}
+      onClick={onClick}
+    >
       {title}
     </button>
   );
