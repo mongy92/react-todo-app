@@ -6,15 +6,16 @@ interface Props {
 
 const Header: React.FC<Props> = ({ title = 'Welcome' }) => {
   return (
-    <header>
-      <h1 style={headerStyle}>{title}</h1>
+    <header className='header'>
+      <h1>{title}</h1>
+      <button className='btn'>ADD</button>
     </header>
   );
 };
 
 export default Header;
 
-const headerStyle = {
-  color: 'red',
-  backgroundColor: 'black',
-};
+// const headerStyle = {
+//   color: 'red',
+//   backgroundColor: 'black',
+// };
