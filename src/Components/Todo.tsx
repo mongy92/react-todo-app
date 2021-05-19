@@ -1,11 +1,9 @@
+/* eslint-disable @typescript-eslint/no-redeclare */
 import React from 'react';
+import { TodoType } from '../types/TodoType';
 
 interface Props {
-  todo: {
-    id: number;
-    title: string;
-    day: string;
-  };
+  todo: TodoType;
 }
 
 const Todo: React.FC<Props> = ({ todo }) => {
