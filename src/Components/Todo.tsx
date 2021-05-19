@@ -13,7 +13,6 @@ const Todo: React.FC<Props> = ({ todo, onDelete }) => {
         {todo.title}
         <FaTimes style={{ color: 'red' }} onClick={() => onDelete(todo.id)} />
       </h3>
-      <p>{todo.day}</p>
     </div>
   );
 };
