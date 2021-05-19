@@ -1,3 +1,5 @@
+import Todo from './Todo';
+
 const todos = [
   {
     id: 1,
@@ -15,7 +17,7 @@ const Todos = () => {
   return (
     <>
       {todos.map((todo) => (
-        <h3 key={todo.id}>{todo.title}</h3>
+        <Todo key={todo.id} todo={todo} />
       ))}
     </>
   );
